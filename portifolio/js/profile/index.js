@@ -8,7 +8,7 @@ class Profile extends HTMLElement {
 
     const github = new fetchGithub();
     github.get().then(user => {
-      user['job'] = 'Full stack'
+      user['job'] = ''
       const section = this.createHTML(user);
       const style = document.createElement('style');
       style.textContent = getStyle();

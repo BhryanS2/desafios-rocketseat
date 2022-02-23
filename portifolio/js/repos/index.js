@@ -1,8 +1,11 @@
+import { userName } from "../fetch/getUserName.js";
 import { SearchApi } from "./searchApi.js";
 
 class Repository {
   constructor() {
     this.shadowRoot = document.querySelector('.repos-main');
+    const linkToGithubEl = document.querySelector('.projects-title a');
+    linkToGithubEl.attributes.href.value = `https://github.com/${userName}`;
     const searchApi = new SearchApi();
     searchApi.PromisesResolve()
       .then(repos => {
@@ -31,6 +34,7 @@ class Repository {
     const tech = document.createElement("div");
     const color = document.createElement("div");
     const techP = document.createElement("p");
+    const lenguageName = String(repos.tech).toLowerCase();
 
     h2.innerText = repos.name;
     techP.innerText = repos.tech;
@@ -50,7 +54,7 @@ class Repository {
     forks.classList.add("repo-forks");
     forkIcon.classList.add("fa-solid", "fa-code-fork");
     tech.classList.add("repo-main-tech");
-    color.classList.add("color-tech", String(repos.tech).toLowerCase());
+    color.classList.add("color-tech", lenguageName === 'c++' ? 'cpp' : lenguageName);
     techP.classList.add("repo-tech");
     section.classList.add("repo", "card");
 
@@ -77,6 +81,8 @@ class Repository {
       window.open(repos.url, "_blank"));
     return section;
   }
+
+
 }
 
 new Repository();

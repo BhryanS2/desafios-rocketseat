@@ -249,7 +249,7 @@ i {
 .repo-main-tech {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .actions-repo > div {
@@ -328,34 +328,4 @@ i {
 
   color: var(--text-color);
   text-decoration: none;
-}
-
-/* techs colors */
-
-.javascript {
-  background: #f0c14b;
-}
-
-.typescript {
-  background: #007acc;
-}
-
-.html {
-  background: #e34f26;
-}
-
-.css {
-  background: #563d7c;
-}
-
-.java {
-  background: #b07219;
-}
-
-.rust {
-  background: #dea584;
-}
-
-.ruby {
-  background: #701516;
 }

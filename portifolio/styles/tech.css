@@ -1,0 +1,77 @@
+/* techs colors */
+
+.javascript {
+  background: #f0c14b;
+}
+
+.typescript {
+  background: #007acc;
+}
+
+.html {
+  background: #e34f26;
+}
+
+.css {
+  background: #563d7c;
+}
+
+.java {
+  background: #b07219;
+}
+
+.rust {
+  background: #dea584;
+}
+
+.ruby {
+  background: #701516;
+}
+
+.php {
+  background: #4f5d95;
+}
+
+.c {
+  background: #555555;
+}
+
+.dotnet {
+  background: #179617;
+}
+
+.csharp {
+  background: #179617;
+}
+
+.python {
+  background: #3572a5;
+}
+
+.crystal {
+  background: #000;
+}
+
+.elixer {
+  background: #6e4a7e;
+}
+
+.assembly {
+  background: #6e4c13;
+}
+
+.go {
+  background: #006032;
+}
+
+.cpp {
+  background: #f34b7d;
+}
+
+.scss {
+  background: #a349a4;
+}
+
+.ejs {
+  background: #a91e50;
+}

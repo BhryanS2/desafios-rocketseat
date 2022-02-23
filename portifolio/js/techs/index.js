@@ -5,10 +5,10 @@ class Techs {
     const github = new fetchGithub();
     this.Container = document.querySelector('.techs-content');
 
-    github.getRepos()
+    github.getRepos(10)
       .then(async repos => {
-        const [first, second] = repos;
-        const array = await this.createHTML([first.languages_url, second.languages_url])
+        const urls = repos.map(repo => repo.languages_url);
+        const array = await this.createHTML(urls)
         array.forEach(item => this.Container.appendChild(item))
       })
 
@@ -26,20 +26,17 @@ class Techs {
     return array;
   }
 
-  async getTechs([first, second]) {
-    const techs = new Set();
-    const [firstLanguages, secondLanguages] = await Promise.all([
-      fetch(first).then(res => res.json()),
-      fetch(second).then(res => res.json())
-    ]);
-    const firstArray = Array.from(Object.entries(firstLanguages));
-    const secondArray = Array.from(Object.entries(secondLanguages));
-    const array = [...firstArray, ...secondArray];
-    array.reduce((acc, [key, value]) => {
-      if (value) acc.add(key);
+  async getTechs([...repos]) {
+    const promises = repos.map(async url => await fetch(url));
+    const responses = await Promise.all(promises);
+    const responsesToJson = responses.map(response => response.json());
+    const lenguages = await Promise.all(responsesToJson);
+    const lenguagesReduce = lenguages.reduce((acc, curr) => {
+      for (const key in curr) acc.add(key);
       return acc;
-    }, techs);
-    return Array.from(techs);
+    }, new Set());
+    const arrayFinal = Array.from(lenguagesReduce);
+    return arrayFinal;
   }
 
 }
