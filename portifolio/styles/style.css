@@ -54,7 +54,7 @@ body {
   margin-right: 60px;
 }
 
-.perfil-container,
+.profile-container,
 .information,
 .tech-container,
 .experience,
@@ -62,8 +62,8 @@ body {
   max-width: 348px;
 }
 
-/* perfil */
-.perfil-container {
+/* profile */
+.profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +71,7 @@ body {
   max-width: 348px;
 }
 
-.perfil-container .image-container {
+.profile-container .image-container {
   width: 128px;
   height: 128px;
   border-radius: 50%;
@@ -85,7 +85,7 @@ body {
   border-radius: 50%;
 }
 
-.perfil-container h1 {
+.profile-container h1 {
   font-family: "Merriweather Sans", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -95,7 +95,7 @@ body {
   color: var(--text-color);
 }
 
-.perfil-container h2 {
+.profile-container h2 {
   font-family: "Merriweather Sans", sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -217,9 +217,11 @@ i {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  cursor: pointer;
 }
 
-.repo-title {
+.repo-title,
+.repo-title h2 {
   font-family: "Merriweather Sans", sans-serif;
   font-weight: bold;
   font-size: 16px;
@@ -326,4 +328,34 @@ i {
 
   color: var(--text-color);
   text-decoration: none;
+}
+
+/* techs colors */
+
+.javascript {
+  background: #f0c14b;
+}
+
+.typescript {
+  background: #007acc;
+}
+
+.html {
+  background: #e34f26;
+}
+
+.css {
+  background: #563d7c;
+}
+
+.java {
+  background: #b07219;
+}
+
+.rust {
+  background: #dea584;
+}
+
+.ruby {
+  background: #701516;
 }
