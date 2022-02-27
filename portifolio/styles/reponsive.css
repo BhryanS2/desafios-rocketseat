@@ -1,23 +1,36 @@
 .bars {
-  /* display: none; */
+  display: none;
 }
 @media (max-width: 1200px) {
   /* create sidebar */
-  .content-left {
+  .content-left.active {
     display: none;
   }
+
   .bars {
     display: flex;
-    position: relative;
-    color: #fff;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: var(--text-color);
     z-index: 5;
-    top: 0;
+    top: 10px;
     left: 0;
+    cursor: pointer;
   }
 
   .bars i {
     margin: 0 10px;
-    position: absolute;
-    color: #fff;
+    color: var(--text-color);
+    font-size: 1.8rem;
+  }
+
+  .repos-main {
+    flex-flow: row wrap;
+  }
+
+  .post {
+    flex-flow: row wrap;
+    justify-content: center;
   }
 }
