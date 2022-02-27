@@ -1,0 +1,96 @@
+:root {
+  --body-bg-color: #faf7fd;
+  --purple: #bb99dd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--body-bg-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  gap: 33px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--purple);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.imageContainer {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  border: 3px solid var(--purple);
+  border-radius: 50%;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile p {
+  font-weight: bold;
+  color: var(--purple);
+  margin-top: 10px;
+}
+
+.linksContainer {
+  width: 326px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--purple);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.outline {
+  background-color: white;
+  border: 2px solid var(--purple);
+  color: var(--purple);
+}

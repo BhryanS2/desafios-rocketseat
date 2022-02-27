@@ -1,0 +1,23 @@
+.bars {
+  /* display: none; */
+}
+@media (max-width: 1200px) {
+  /* create sidebar */
+  .content-left {
+    display: none;
+  }
+  .bars {
+    display: flex;
+    position: relative;
+    color: #fff;
+    z-index: 5;
+    top: 0;
+    left: 0;
+  }
+
+  .bars i {
+    margin: 0 10px;
+    position: absolute;
+    color: #fff;
+  }
+}
