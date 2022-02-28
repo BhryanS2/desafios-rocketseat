@@ -1,0 +1,37 @@
+.sidebar.close {
+  width: 78px;
+}
+
+.sidebar.close .logo-menu .logo,
+.sidebar.close .search input,
+.sidebar.close .informations,
+.sidebar.close .links a {
+  display: none;
+}
+
+.sidebar.close .search-container {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar.close .search {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.sidebar.close .search img {
+  width: 30px;
+  height: 30px;
+}
+
+.sidebar.close .links {
+  padding: 10px;
+}
+
+.sidebar.close .profile-container {
+  height: 18%;
+}
