@@ -2,4 +2,26 @@
   main {
     flex-direction: column;
   }
+
+  .title {
+    margin-bottom: 5px;
+  }
+  .description p {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .rocket {
+    position: relative;
+  }
+
+  .rocket img {
+    width: 100%;
+    height: auto;
+  }
+
+  .topImage,
+  .bottomImage {
+    display: none;
+  }
 }

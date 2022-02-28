@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/index.css">
   <link rel="stylesheet" href="./styles/responsive.css">
-  <script src="index.js" defer></script>
+  <script src="./js/index.js" defer></script>
+  <script src="./js/modal.js" defer></script>
   <title>CountDown</title>
 </head>
 
@@ -43,13 +44,26 @@
       <div class="description">
         <p>Inscreva-se para saber mais sobre o lançamento</p>
       </div>
-      <button>Inscreva-se</button>
+      <button class="signup">Inscreva-se</button>
     </section>
-    <section>
+    <section class="rocket">
       <img src="./images/rocket.svg" alt="rocket">
     </section>
     <div class="bottomImage">
       <img src="./images/bottom-image.svg" alt="bottom">
+    </div>
+    <div class="modal">
+      <div class="modalHeader">
+        <h1>Inscreva-se</h1>
+        <button class="close">X</button>
+      </div>
+      <div class="modalBody">
+        <form action="">
+          <input type="text" placeholder="Nome">
+          <input type="email" placeholder="E-mail">
+          <button type="submit" class="submit">Enviar</button>
+        </form>
+      </div>
     </div>
   </main>
 </body>
