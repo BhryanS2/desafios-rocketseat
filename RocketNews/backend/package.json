@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node --experimental-fetch --no-warnings index.mjs",
+    "startDebug": "DEBUG=api:* node --experimental-fetch --no-warnings index.mjs",
+    "dev": "nodemon index.mjs",
+    "test": "node src/test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "node-cache": "^5.1.2",
+    "sequelize": "^6.17.0",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "debug": "^4.3.3",
+    "nodemon": "^2.0.15"
+  }
+}
