@@ -1,7 +1,8 @@
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
 const load = document.querySelector('.loadContainer');
-const toggle = () => {
+
+const toggleLoad = () => {
   load.classList.toggle('disable');
 };
 
@@ -10,18 +11,23 @@ function clearFields() {
   inputs.forEach(input => input.value = '');
 }
 
+const getEmail = (submitEvent) => {
+  return submitEvent.target.email.value;
+}
+
 async function handleSubmit(event) {
   event.preventDefault();
-  toggle()
-  const email = event.target.email.value;
+  toggleLoad()
+  const email = getEmail(event);
   const [error, result] = await submitToServer(email);
   if (error) {
-    alert(error.error);
-    toggle()
+    console.log(error.error);
+    toggleLoad()
     return;
   }
+  console.log(result);
   clearFields();
-  toggle()
+  toggleLoad()
 }
 
 function validadeEmail(email) {
@@ -32,13 +38,15 @@ function validadeEmail(email) {
 async function submitToServer(email) {
   const isValid = validadeEmail(email);
   if (!isValid) return ['invalid email', null];
-  const reponse = await fetch('http://localhost:3000/', {
+  const options = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ email }),
-  });
+  }
+  const url = 'http://localhost:3000/'
+  const reponse = await fetch(url, options);
   const result = await reponse.json();
   if (!result.success) return [result.error, null];
   return [null, result.email];
