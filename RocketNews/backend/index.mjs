@@ -1,11 +1,12 @@
 import assert from 'assert';
-import { createServer } from 'http';
 import debug from 'debug'
+import { createServer } from 'http';
 import { setDbModel } from './src/db.mjs'
 import { handleEmail } from './src/email/index.js';
 
 const rocketNews = await setDbModel()
 const logger = debug('api:index')
+
 function handleRequest(request, response) {
   response.setHeader('Access-Control-Allow-Origin', '*');
   response.setHeader('Access-Control-Allow-Methods', 'POST');
@@ -37,8 +38,7 @@ function handleRequest(request, response) {
     response.end(JSON.stringify({ result, success: true }));
   });
 
-  // set timeout to 5 seconds
-  request.setTimeout(5000, () => {
+  request.setTimeout(500, () => {
     response.statusCode = 408;
     response.end(JSON.stringify({ error: 'timeout', success: false }));
   });
@@ -61,24 +61,20 @@ createServer(handleRequest)
 }
 
 {
-  const currentEmailTest = "test@gmail.com"
-  try {
-    const response = await fetch('http://localhost:3000/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email: currentEmailTest }),
-    })
-    const { error, success } = await response.json()
-    const expectedError = 'email already exists'
-    const expectedSuccess = false
-    const currentMessage = error.error
-    assert.equal(currentMessage, expectedError)
-    assert.equal(success, expectedSuccess)
-  } catch (error) {
-    logger('error fetch')
-    logger(error)
-  }
+  const currentEmailTest = "test@hotmail.com"
+  const response = await fetch('http://localhost:3000/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email: currentEmailTest }),
+  })
+  const { error, success } = await response.json()
+  const expectedError = 'email already exists'
+  const expectedSuccess = false
+  const currentMessage = error.error
+  assert.equal(currentMessage, expectedError)
+  assert.equal(success, expectedSuccess)
+  logger(`${currentMessage} - ${success}`)
 }
-// curl -X POST -H "Content-Type: application/json" -d '{"email": "adwadawd@adwadawd.com"}' http://localhost:3000
+// curl -X POST -H "Content-Type: application/json" -d '{"email": "adwadawd@adwadawd.com"}' http://localhost:3000h
