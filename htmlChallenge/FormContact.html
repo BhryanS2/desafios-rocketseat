@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato</title>
+  <style>
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    fieldset>div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
+    fieldset>div:nth-last-child(2) {
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <fieldset>
+    <legend>Entre em contato</legend>
+    <select name="assunto">
+      <option value="0">Escolha</option>
+      <option value="1">Suporte</option>
+      <option value="2">Sugestão</option>
+      <option value="3">Reclamação</option>
+    </select>
+    <div>
+      <label for="nome">
+        <strong>Nome Completo:</strong>
+      </label>
+      <input type="text" name="nome" placeholder="Seu nome">
+    </div>
+    <div>
+      <label for="email">
+        <strong>E-mail:</strong>
+      </label>
+      <input type="email" name="email" placeholder="email@email.com">
+    </div>
+    <div>
+      <label for="mensagem">
+        <strong>Mensagem:</strong>
+      </label>
+      <textarea name="mensagem" placeholder="Digite sua mensagem"></textarea>
+    </div>
+    <div>
+      <input type="checkbox" name="novidades">
+      <label for="novidades">
+        Desejo receber novidades por e-mail
+      </label>
+    </div>
+    <button>Enviar</button>
+  </fieldset>
+</body>
+
+</html>
