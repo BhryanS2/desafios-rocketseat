@@ -1,0 +1,227 @@
+:root {
+  --bg: #000000;
+  --bg-card: #0e1218;
+  --text: #f1f1f1;
+  --img-profile: #8257e5;
+  --buttons: #fff;
+  --border-button: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text);
+}
+
+body {
+  background: var(--bg-card);
+}
+
+h1 {
+  font-family: "Prompt", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 140px;
+}
+
+button {
+  background: var(--bg);
+  border: 2px solid var(--border-button);
+  border-radius: 15px;
+  padding: 10px 20px;
+  border: 0;
+  transition: background 0.2s;
+  font-size: 15px;
+  line-height: 23px;
+}
+button:hover {
+  filter: brightness(0.8);
+}
+
+.cardContainer {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  padding: 15px 25px;
+}
+
+.card {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  background-color: var(--bg-card);
+  border-radius: 50px;
+  min-height: 600px;
+  min-width: 400px;
+  overflow: hidden;
+}
+
+.card header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.card header img {
+  width: 28px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.card header h2 {
+  font-family: "Prompt", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: var(--text);
+}
+
+.card main {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  min-height: 450px;
+}
+
+.imageProfile {
+  position: absolute;
+  right: -100px;
+  width: 370px;
+  height: 370px;
+  background-color: var(--img-profile);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageProfile img {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.informationProfile {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  width: 200px;
+  background: linear-gradient(
+    180deg,
+    #000000 3.65%,
+    rgba(70, 69, 69, 0.72) 53.65%,
+    rgba(62, 56, 56, 0.42) 100%
+  );
+  border-radius: 2rem;
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+
+.infoItem img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.infoItem p {
+  font-family: "Prompt", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: var(--text);
+}
+
+.card footer {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.card footer img {
+  width: 28px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.card footer span {
+  font-family: "Prompt", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+
+  color: var(--text);
+}
+
+.rgbItem {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-top: 20px;
+  gap: 1rem;
+  width: 100%;
+}
+
+.rgbItem p {
+  font-family: "Prompt", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: var(--text);
+  width: 70px;
+}
+
+input[type="range"] {
+  width: 50%;
+}
+
+@media (max-width: 1000px) {
+  main {
+    gap: 20%;
+  }
+}

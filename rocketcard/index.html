@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="./scripts/render/index.js" defer type="module"></script>
+  <script src="./main.js" defer type="module"></script>
+  <title>Card</title>
+</head>
+
+<body>
+  <main>
+    <section>
+      <h1>Compartilhe seu #rocketcard</h1>
+      <div class="cardContainer">
+        <div class="card">
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1>Customizar Rocketcard</h1>
+      <button class="randomBG">Gerar background</button>
+      <!-- rgb -->
+      <div class="rgbContainer">
+        <div class="rgb">
+          <div class="rgbItem">
+            <input type="range" min="0" max="255" value="0" id="rgbR">
+            <p>R (0%)</p>
+          </div>
+          <div class="rgbItem">
+            <input type="range" min="0" max="255" value="0" id="rgbG">
+            <p>G (0%)</p>
+          </div>
+          <div class="rgbItem">
+            <input type="range" min="0" max="255" value="0" id="rgbB">
+            <p>B (0%)</p>
+          </div>
+        </div>
+    </section>
+  </main>
+
+</body>
+
+</html>
