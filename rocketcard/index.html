@@ -30,21 +30,53 @@
       <div class="rgbContainer">
         <div class="rgb">
           <div class="rgbItem">
-            <input type="range" min="0" max="255" value="0" id="rgbR">
-            <p>R (0%)</p>
+            <input type="range" min="0" max="255" value="0" id="red">
+            <p>R (0)</p>
           </div>
           <div class="rgbItem">
-            <input type="range" min="0" max="255" value="0" id="rgbG">
-            <p>G (0%)</p>
+            <input type="range" min="0" max="255" value="0" id="green">
+            <p>G (0)</p>
           </div>
           <div class="rgbItem">
-            <input type="range" min="0" max="255" value="0" id="rgbB">
-            <p>B (0%)</p>
+            <input type="range" min="0" max="255" value="0" id="blue">
+            <p>B (0)</p>
           </div>
+          <input type="color" name="rgbHtml" id="rgbHtml">
         </div>
+      </div>
+      <button class="download">Fazer download</button>
+      <div class="preview"></div>
     </section>
   </main>
+  <script src="./scripts/htmlToCanvas/index.min.js"></script>
+  <script>
+    const download = {
+      html: document.querySelector('.cardContainer'),
+      btn: document.querySelector('.download'),
+      preview: document.querySelector('.preview'),
 
+      init() {
+        console.log('init');
+        download.btn.addEventListener('click', download.handleBtnClick)
+      },
+
+      handleBtnClick() {
+        const { html, preview } = download
+        html.style.borderRadius = '0'
+        html2canvas(html)
+          .then(canvas => download.downloadCanvas(canvas, 'rocketcard.png'))
+      },
+
+      downloadCanvas(canvas, filename) {
+        const link = document.createElement('a')
+        link.href = canvas.toDataURL('image/png')
+        link.download = filename
+        link.click()
+      },
+    }
+    download.init()
+
+  </script>
 </body>
 
 </html>

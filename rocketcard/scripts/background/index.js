@@ -3,63 +3,96 @@ export const rgbFn = {
   cardContainer: document.querySelector('.cardContainer'),
   paragraphs: document.querySelectorAll('.rgbItem p'),
   btn: document.querySelector('.randomBG'),
+  rgbHtml: document.querySelector('#rgbHtml'),
   rgb: {
-    rgbR: 0,
-    rgbG: 0,
-    rgbB: 0,
+    red: 0,
+    green: 0,
+    blue: 0,
   },
   init() {
-    rgbFn.btn.addEventListener('click', () => {
+    const { inputsRgb, btn } = this;
+    function randomEmitEvent() {
       const randomRgb = rgbFn.getRandomRgb();
-      rgbFn.setBackgroundColor(randomRgb);
-      rgbFn.setPercentInParagraphs(randomRgb);
-      rgbFn.setInputs(randomRgb);
-    })
+      rgbFn.setAllRgb(randomRgb);
+      rgbFn.setAllValues();
+    }
 
-    rgbFn.inputsRgb.forEach(input => rgbFn.addInputListener(input))
+    btn.addEventListener('click', randomEmitEvent);
+    inputsRgb.forEach(rgbFn.addInputListener);
+    rgbFn.rgbHtml.addEventListener('input', e => {
+      const { value } = e.target;
+      const rgbValue = rgbFn.hexToRgb(value);
+      rgbFn.setAllRgb(rgbValue);
+    });
+  },
+
+  rgbToHex(rgb) {
+    const { red, green, blue } = rgb;
+    const rr = red.toString(16).padStart(2, '0');
+    const gg = green.toString(16).padStart(2, '0');
+    const bb = blue.toString(16).padStart(2, '0');
+    const hex = `#${rr}${gg}${bb}`;
+    return hex;
+  },
+
+  hexToRgb(hex) {
+    const rgb = {
+      red: parseInt(hex.substring(1, 3), 16),
+      green: parseInt(hex.substring(3, 5), 16),
+      blue: parseInt(hex.substring(5, 7), 16),
+    };
+    return rgb;
+  },
+
+  setHex(hex) {
+    rgbFn.rgbHtml.value = hex;
   },
 
   getRandomRgb() {
-    const { rgbR, rgbG, rgbB } = rgbFn.rgb;
     const randomRgb = {
-      rgbR: Math.floor(Math.random() * 256),
-      rgbG: Math.floor(Math.random() * 256),
-      rgbB: Math.floor(Math.random() * 256),
+      red: Math.floor(Math.random() * 256),
+      green: Math.floor(Math.random() * 256),
+      blue: Math.floor(Math.random() * 256),
     }
     return randomRgb;
   },
 
   setBackgroundColor(rgbColor) {
-    const rgbString = `rgb(${rgbColor.rgbR}, ${rgbColor.rgbG}, ${rgbColor.rgbB})`;
+    const rgbString = `rgb(${rgbColor.red}, ${rgbColor.green}, ${rgbColor.blue})`;
     rgbFn.cardContainer.style.backgroundColor = rgbString;
   },
 
-  setPercentInParagraphs(rgbColor) {
-    const max = 255;
-    const rgbR = rgbColor.rgbR / max * 100;
-    const rgbG = rgbColor.rgbG / max * 100;
-    const rgbB = rgbColor.rgbB / max * 100;
-    const floor = (num) => Math.floor(num);
-    rgbFn.paragraphs[0].innerText = `R (${floor(rgbR)}%)`;
-    rgbFn.paragraphs[1].innerText = `G (${floor(rgbG)}%)`;
-    rgbFn.paragraphs[2].innerText = `B (${floor(rgbB)}%)`;
+  setValueInParagraph(rgbColor) {
+    rgbFn.paragraphs[0].innerText = `R (${rgbColor.red})`;
+    rgbFn.paragraphs[1].innerText = `G (${rgbColor.green})`;
+    rgbFn.paragraphs[2].innerText = `B (${rgbColor.blue})`;
   },
 
   setRgb(event) {
     const { id, value } = event.target;
     rgbFn.rgb[id] = Number(value);
-    console.log(rgbFn.rgb);
-    rgbFn.setBackgroundColor(rgbFn.rgb);
-    rgbFn.setPercentInParagraphs(rgbFn.rgb);
-    rgbFn.setInputs(rgbFn.rgb);
+    rgbFn.setAllValues(rgbFn.rgb);
   },
 
-  setInputs(rgbColor) {
-    rgbFn.inputsRgb.forEach(input => {
+  setAllRgb(rgb) {
+    rgbFn.rgb = rgb;
+    rgbFn.setAllValues(rgb);
+  },
+
+  setInputs(rgbColor, inputs) {
+    inputs.forEach(input => {
       const { id } = input;
       input.value = rgbColor[id];
-      console.log(rgbColor[id]);
     })
+  },
+
+  setAllValues() {
+    const { rgb } = rgbFn;
+    const hex = rgbFn.rgbToHex(rgb);
+    rgbFn.setBackgroundColor(rgb);
+    rgbFn.setValueInParagraph(rgb);
+    rgbFn.setInputs(rgb, rgbFn.inputsRgb);
+    rgbFn.setHex(hex);
   },
 
   addInputListener(input) {

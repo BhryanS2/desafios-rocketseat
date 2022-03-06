@@ -216,6 +216,14 @@ button:hover {
   width: 70px;
 }
 
+#rgbHtml {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  height: 40px;
+}
+
 input[type="range"] {
   width: 50%;
 }

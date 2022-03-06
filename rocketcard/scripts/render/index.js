@@ -13,7 +13,7 @@ export class RenderCard {
       repository: 38,
       company: "@Rocketseat",
       location: "Bebedouro",
-      image: "https://github.com/birobirobiro.png",
+      image: "./assets/birobirobiro.png",
     }
 
     const map = new Map();
