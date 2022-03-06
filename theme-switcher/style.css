@@ -1,0 +1,100 @@
+:root {
+  --dark: #292c35;
+  --light: #f1f1f1;
+  --label: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* cor padrão = theme light */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  transition: all 0.8s ease-out;
+}
+
+button {
+  background: var(--label);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+button img {
+  width: 95px;
+  height: 95px;
+  margin-right: 10px;
+}
+
+.themeSwitch input {
+  display: none;
+}
+
+.ball {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background-color: var(--light);
+}
+
+/* theme dark */
+
+main.dark {
+  background: var(--dark);
+}
+
+main.dark {
+  color: var(--light);
+}
+
+.lua,
+.sol {
+  transition: all 0.5s;
+}
+
+.sol {
+  transform: translateX(-100px);
+}
+
+.themeSwitch input:checked + .lua {
+  transform: translateX(100px);
+  opacity: 1;
+}
+
+.themeSwitch input:checked ~ .sol {
+  transform: translateX(0);
+  opacity: 0;
+}
+
+.themeSwitch input:checked ~ .ball {
+  background-color: var(--dark);
+  transform: translateX(-0px);
+}
+
+.lua {
+  opacity: 0;
+}
+.themeSwitch .ball {
+  position: absolute;
+  display: block;
+  top: 5px;
+  left: 5px;
+  transition: 0.7s;
+  transform: translateX(100px);
+}
