@@ -1,0 +1,141 @@
+:root {
+  --yellow: #ffcc29;
+  --blue: #1d539e;
+  --gray: #828799;
+  --page-background: #f9fbfc;
+  --white: #fff;
+  --color-title: #1e2338;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--page-background);
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  background-color: var(--blue);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.header h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 65px;
+
+  color: var(--white);
+}
+
+.header p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+
+  color: var(--white);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  /* center grid */
+  justify-items: center;
+}
+
+.card {
+  background-color: var(--page-background);
+  border-radius: 0.5rem;
+  padding: 30px;
+  border: 2px solid var(--gray);
+}
+
+.planType {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: var(--color-title);
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+}
+
+.mainPrice {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.price p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: #1e2338;
+}
+
+.price .month {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+
+  color: #828799;
+}
+
+.descriptionPlan {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+
+  color: #828799;
+}
+
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 1rem auto;
+}
+
+.card main {
+  display: flex;
+  flex-direction: column;
+}
+
+.listContainer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.listContainer li {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
