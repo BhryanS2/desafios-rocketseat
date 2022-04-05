@@ -1,22 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>pricing table</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>pricing table</title>
-</head>
-
-<body>
-  <header class="header">
-    <h1>Conheça nossos planos</h1>
-    <p>Conheça nossas soluções e escolha o plano ideal para o seu próximo projeto.</p>
-  </header>
-  <main>
-    <div class="card">
-      <header>
+  <body>
+    <header class="header">
+      <h1>Conheça nossos planos</h1>
+      <p>
+        Conheça nossas soluções e escolha o plano ideal para o seu próximo
+        projeto.
+      </p>
+    </header>
+    <main>
+      <div class="card translateTop">
+        <header>
+          <h3 class="planType">Free</h3>
+          <div class="price">
+            <h1 class="mainPrice">R$ 0</h1>
+            <p>
+              ,00
+              <span class="month">/mês</span>
+            </p>
+          </div>
+          <p class="descriptionPlan">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </header>
+        <div class="divider"></div>
+        <main>
+          <ul class="listContainer">
+            <li>
+              <img src="./assets/check.svg" alt="check" />
+              <p>Lorem ipsum dolor sit amet</p>
+            </li>
+            <li>
+              <img src="./assets/check.svg" alt="check" />
+              <p>Lorem ipsum dolor sit amet</p>
+            </li>
+          </ul>
+        </main>
+        <button class="btn btn-outline">ASSINAR</button>
+      </div>
+      <div class="card main-card">
+        <h3 class="planType">Básico</h3>
+        <div class="price">
+          <h1 class="mainPrice">R$ 0</h1>
+          <p>
+            ,00
+            <span class="month">/mês</span>
+          </p>
+        </div>
+        <p class="descriptionPlan">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <ul class="listContainer">
+          <li>
+            <img src="./assets/check.svg" alt="check" />
+            <p>Lorem ipsum dolor sit amet</p>
+          </li>
+          <li>
+            <img src="./assets/check.svg" alt="check" />
+            <p>Lorem ipsum dolor sit amet</p>
+          </li>
+        </ul>
+        <button class="btn btn-outline">ASSINAR</button>
+      </div>
+      <div class="card translateTop">
         <h3 class="planType">Free</h3>
         <div class="price">
           <h1 class="mainPrice">R$ 0</h1>
@@ -25,68 +79,21 @@
             <span class="month">/mês</span>
           </p>
         </div>
-        <p class="descriptionPlan">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </header>
-      <div class="divider"></div>
-      <main>
+        <p class="descriptionPlan">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
         <ul class="listContainer">
           <li>
-            <img src="./assets/check.svg" alt="check">
+            <img src="./assets/check.svg" alt="check" />
             <p>Lorem ipsum dolor sit amet</p>
           </li>
           <li>
-            <img src="./assets/check.svg" alt="check">
+            <img src="./assets/check.svg" alt="check" />
             <p>Lorem ipsum dolor sit amet</p>
           </li>
         </ul>
-      </main>
-      <button class="btn btn-outline">ASSINAR</button>
-    </div>
-    <div class="card main-card">
-      <h3 class="planType">Básico</h3>
-      <div class="price">
-        <h1 class="mainPrice">R$ 0</h1>
-        <p>
-          ,00
-          <span class="month">/mês</span>
-        </p>
+        <button class="btn btn-outline">ASSINAR</button>
       </div>
-      <p class="descriptionPlan">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <ul class="listContainer">
-        <li>
-          <img src="./assets/check.svg" alt="check">
-          <p>Lorem ipsum dolor sit amet</p>
-        </li>
-        <li>
-          <img src="./assets/check.svg" alt="check">
-          <p>Lorem ipsum dolor sit amet</p>
-        </li>
-      </ul>
-      <button class="btn btn-outline">ASSINAR</button>
-    </div>
-    <div class="card">
-      <h3 class="planType">Free</h3>
-      <div class="price">
-        <h1 class="mainPrice">R$ 0</h1>
-        <p>
-          ,00
-          <span class="month">/mês</span>
-        </p>
-      </div>
-      <p class="descriptionPlan">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <ul class="listContainer">
-        <li>
-          <img src="./assets/check.svg" alt="check">
-          <p>Lorem ipsum dolor sit amet</p>
-        </li>
-        <li>
-          <img src="./assets/check.svg" alt="check">
-          <p>Lorem ipsum dolor sit amet</p>
-        </li>
-      </ul>
-      <button class="btn btn-outline">ASSINAR</button>
-    </div>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>

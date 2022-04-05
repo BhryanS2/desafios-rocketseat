@@ -57,9 +57,6 @@ button img {
 
 main.dark {
   background: var(--dark);
-}
-
-main.dark {
   color: var(--light);
 }
 

@@ -139,3 +139,7 @@ main {
   gap: 15px;
   align-items: center;
 }
+
+.translateTop {
+  translate: ;
+}

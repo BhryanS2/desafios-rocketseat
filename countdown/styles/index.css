@@ -40,11 +40,17 @@ button:hover {
   width: 100%;
 }
 
+.bottomImage,
+.topImage {
+  pointer-events: none;
+}
+
 .bottomImage img,
 .topImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .content {
